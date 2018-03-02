@@ -25,13 +25,26 @@ class ViewController: UIViewController {
     
     @IBAction func generatePokemon(_ sender: Any) {
         // TODO: Improve API request
-        let apiUrl = URL(string: "https://pokeapi.co/api/v2/pokemon/")
+        let apiUrl = URL(string: "https://pokeapi.co/api/v2/pokemon")
         
         let request = URLRequest(url: apiUrl!)
         // Request to Pokemon API
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error == nil {
-                print(data)
+                // Optional binding to get data
+                if let data = data {
+                    let parsedResult: [String:AnyObject]!
+                    do {
+                        parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]
+                        
+                        if let resultDictonary = parsedResult["results"] as? [[String:AnyObject]]  {
+                            print(resultDictonary[0])
+                        }
+                        
+                    } catch {
+                        print("Error in parse json")
+                    }
+                }
             }
         }
         
