@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PokeCardViewController.swift
 //  PokeCards
 //
 //  Created by Felipe Valdivia on 3/1/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PokeCardViewController: UIViewController {
 
     @IBOutlet weak var pokemonName: UILabel!
     
@@ -25,9 +25,13 @@ class ViewController: UIViewController {
     
     @IBAction func generatePokemon(_ sender: Any) {
         // TODO: Improve API request
-        let apiUrl = URL(string: "https://pokeapi.co/api/v2/pokemon")
+        var components = URLComponents()
         
-        let request = URLRequest(url: apiUrl!)
+        components.scheme = "https"
+        components.host = "pokeapi.co"
+        components.path = "/api/v2/pokemon"
+        
+        let request = URLRequest(url: components.url!)
         // Request to Pokemon API
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error == nil {
