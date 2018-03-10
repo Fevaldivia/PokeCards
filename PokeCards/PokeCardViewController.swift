@@ -34,22 +34,35 @@ class PokeCardViewController: UIViewController {
         let request = URLRequest(url: components.url!)
         // Request to Pokemon API
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if error == nil {
-                // Optional binding to get data
-                if let data = data {
-                    let parsedResult: [String:AnyObject]!
-                    do {
-                        parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]
-                        
-                        if let resultDictonary = parsedResult["results"] as? [[String:AnyObject]]  {
-                            print(resultDictonary[0])
-                        }
-                        
-                    } catch {
-                        print("Error in parse json")
-                    }
-                }
+            
+            guard error == nil else {
+                print("There is an Error: \(error)")
+                return
             }
+            
+            // Optional binding to get data
+            
+            guard let data = data else {
+                print("There is no data")
+                return
+            }
+                    
+            let parsedResult: [String:AnyObject]!
+            
+            do {
+                parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]
+            } catch {
+                print("Error in parse json")
+                return
+            }
+            
+            guard let resultDictonary = parsedResult["results"] as? [[String:AnyObject]] else {
+                print("There is an error with result dictonary")
+                return
+            }
+            
+            print(resultDictonary[0])
+
         }
         
         task.resume()
