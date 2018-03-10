@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PokeCardViewController.swift
 //  PokeCards
 //
 //  Created by Felipe Valdivia on 3/1/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PokeCardViewController: UIViewController {
 
     @IBOutlet weak var pokemonName: UILabel!
     
