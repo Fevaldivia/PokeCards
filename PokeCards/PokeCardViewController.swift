@@ -61,7 +61,12 @@ class PokeCardViewController: UIViewController {
                 return
             }
             
-            print(resultDictonary[0])
+            let randomPokemon = Int(arc4random_uniform(UInt32(resultDictonary.count)))
+            
+            let pokemon = resultDictonary[randomPokemon] as [String: AnyObject]
+            
+            
+            print(pokemon)
 
         }
         
