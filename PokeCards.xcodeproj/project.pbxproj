@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512AB5C02055E59C00BCF614 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512AB5BF2055E59C00BCF614 /* GCDBlackBox.swift */; };
 		5148A6332048DA790081A6BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148A6322048DA790081A6BA /* AppDelegate.swift */; };
 		5148A6352048DA790081A6BA /* PokeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148A6342048DA790081A6BA /* PokeCardViewController.swift */; };
 		5148A6382048DA790081A6BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5148A6362048DA790081A6BA /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		512AB5BF2055E59C00BCF614 /* GCDBlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		5148A62F2048DA790081A6BA /* PokeCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5148A6322048DA790081A6BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5148A6342048DA790081A6BA /* PokeCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCardViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				5148A6322048DA790081A6BA /* AppDelegate.swift */,
 				5148A6342048DA790081A6BA /* PokeCardViewController.swift */,
+				512AB5BF2055E59C00BCF614 /* GCDBlackBox.swift */,
 				5148A6362048DA790081A6BA /* Main.storyboard */,
 				5148A6392048DA790081A6BA /* Assets.xcassets */,
 				5148A63B2048DA790081A6BA /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5148A6352048DA790081A6BA /* PokeCardViewController.swift in Sources */,
+				512AB5C02055E59C00BCF614 /* GCDBlackBox.swift in Sources */,
 				5148A6332048DA790081A6BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

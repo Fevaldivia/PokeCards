@@ -65,8 +65,10 @@ class PokeCardViewController: UIViewController {
             
             let pokemon = resultDictonary[randomPokemon] as [String: AnyObject]
             
-            
-            print(pokemon)
+            performUIUpdatesOnMain {
+                self.pokemonName.text = (pokemon["name"] as! String)
+            }
+        
 
         }
         
